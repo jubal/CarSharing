@@ -1,9 +1,8 @@
 package com.mls.CarSharing;
 
-import android.app.Activity;
 import android.os.Bundle;
 
-public class CarSharingActivity extends Activity {
+public class CarSharingActivity extends BaseActivity {
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
