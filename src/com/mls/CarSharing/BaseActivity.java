@@ -1,5 +1,7 @@
 package com.mls.CarSharing;
 
+import com.mobclick.android.MobclickAgent;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +15,7 @@ public class BaseActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		mTagString=this.toString();
+		MobclickAgent.onError(this);
 		log("onCreate");
 	}
 	
@@ -25,12 +28,14 @@ public class BaseActivity extends Activity {
 	@Override
 	public void onResume(){
 		super.onResume();
+		MobclickAgent.onResume(this);
 		log("onResume");
 	}
 	
 	@Override
 	public void onPause(){
 		super.onPause();
+		MobclickAgent.onPause(this);
 		log("onPause");
 	}
 	
