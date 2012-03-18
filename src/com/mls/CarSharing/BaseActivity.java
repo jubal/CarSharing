@@ -1,10 +1,27 @@
 package com.mls.CarSharing;
 
 import android.app.Activity;
+import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 public class BaseActivity extends Activity {
-
+	
+	private String tagString;
+	
+	@Override
+	public void onCreate(Bundle savedInstanceState){
+		super.onCreate(savedInstanceState);
+		tagString=this.toString();
+	}
+	
+	/*
+	 * log method
+	 */
+	public void log(String msgString){
+		Log.d(tagString, msgString);
+	}
+	
 	/*
 	 * Show toast shortcut by content
 	 */
