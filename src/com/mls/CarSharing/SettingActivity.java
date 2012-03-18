@@ -1,5 +1,12 @@
 package com.mls.CarSharing;
 
-public class SettingActivity extends BaseActivity {
+import android.os.Bundle;
 
+public class SettingActivity extends BaseActivity {
+	
+	@Override
+	public void onCreate(Bundle savedInstanceState){
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.setting);
+	}
 }
