@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">Hello World, CarSharingActivity!</string>
-    <string name="app_name">CarSharing</string>
+    <string name="hello">Hello World, 拼车记录仪!</string>
+    <string name="app_name">拼车记录仪</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    
 
 </resources>

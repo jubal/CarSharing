@@ -7,19 +7,50 @@ import android.widget.Toast;
 
 public class BaseActivity extends Activity {
 	
-	private String tagString;
+	private String mTagString;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
-		tagString=this.toString();
+		mTagString=this.toString();
+		log("onCreate");
+	}
+	
+	@Override
+	public void onStart(){
+		super.onStart();
+		log("onStart");
+	}
+	
+	@Override
+	public void onResume(){
+		super.onResume();
+		log("onResume");
+	}
+	
+	@Override
+	public void onPause(){
+		super.onPause();
+		log("onPause");
+	}
+	
+	@Override
+	public void onStop(){
+		super.onStop();	
+		log("onStop");
+	}
+	
+	@Override
+	public void onDestroy(){
+		super.onDestroy();
+		log("onDestroy");
 	}
 	
 	/*
 	 * log method
 	 */
 	public void log(String msgString){
-		Log.d(tagString, msgString);
+		Log.d(mTagString, msgString);
 	}
 	
 	/*
