@@ -6,5 +6,6 @@
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="lib" path="lib/AndroidAnalyticSDK3.2.1.jar"/>
 	<classpathentry kind="lib" path="lib/com_weibo_android.jar"/>
+	<classpathentry kind="lib" path="lib/GoogleAdMobAdsSdk-4.3.1.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
