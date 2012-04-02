@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">Hello World, 拼车记录仪!</string>
-    <string name="app_name">拼车记录仪</string>
+    <string name="hello">Hello World, 拼车记录器!</string>
+    <string name="app_name">拼车记录器</string>
     <string name="ok">确定</string>
     <string name="cancel">取消</string>
     <string name="exit_app">退出应用？</string>
     <string name="exit_app_tips">您确定要退出应用吗？</string>
+    <string name="mode_selection_title">请选择您的角色</string>
+    <string name="driver">车主</string>
+    <string name="passenger">乘客</string>
 
+
+    <string name="key_app_mode">AppMode</string>
 </resources>

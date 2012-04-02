@@ -24,6 +24,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity 
+            android:name="DriverMainActivity">
+            <intent-filter >
+                <action android:name="android.intent.action.DriverMainView"/>
+            </intent-filter>
+        </activity>
+        <activity 
+            android:name="PassengerMainActivity">
+            <intent-filter >
+                <action android:name="android.intent.action.PassengerMainView"/>
+            </intent-filter>
+        </activity>
         <activity android:name="SettingActivity">
             <intent-filter >
                 <action android:name="android.intent.action.CARSHARINGSETTING"/>
