@@ -10,7 +10,8 @@
     <string name="mode_selection_title">请选择您的角色</string>
     <string name="driver">车主</string>
     <string name="passenger">乘客</string>
-
+	<string name="add_passenger">添加乘客</string>
+	<string name="about">关于</string>
 
     <string name="key_app_mode">AppMode</string>
 </resources>
