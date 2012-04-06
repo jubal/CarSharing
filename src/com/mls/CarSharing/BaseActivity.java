@@ -25,7 +25,9 @@ public class BaseActivity extends Activity implements OnClickListener {
 	
 	//
 	// option menu tag
-	protected static final int MENU_ABOUT = 91;
+	protected static final int MENU_RECOMMEND = 91;
+	protected static final int MENU_ABOUT = MENU_RECOMMEND + 1;
+	
 	
 	protected static final int MODE_DRIVER = 624;
 	protected static final int MODE_PASSENGER = MODE_DRIVER + 1;
@@ -81,6 +83,7 @@ public class BaseActivity extends Activity implements OnClickListener {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu){
 		menu.add(0, MENU_ABOUT, 0, R.string.about);
+		menu.add(0, MENU_RECOMMEND, 0, R.string.recommend);
 		return super.onCreateOptionsMenu(menu);
 	}
 	
@@ -93,6 +96,9 @@ public class BaseActivity extends Activity implements OnClickListener {
 	public boolean onOptionsItemSelected(MenuItem item){
 		if(item.getItemId() == MENU_ABOUT) {
 			showAbout();
+		}
+		else if (item.getItemId() == MENU_RECOMMEND) {
+			startWoaRecommend(BaseActivity.this);
 		}
 		return super.onOptionsItemSelected(item);
 	}
@@ -195,34 +201,19 @@ public class BaseActivity extends Activity implements OnClickListener {
 		showDialog(DIALOG_ABOUT);
 	}
 	
-	/**
-     * 启动精品推荐
-     * @param thisActivity
+	/*
+     * Show recommend view of snda
      */
     public static void startWoaRecommend(Activity thisActivity) {
-        // Intent intent = new Intent(
-        // thisActivity,
-        // com.snda.sdw.woa.recommend.PublicSoftWareListActivity.class);
-        // // 应用的ID
-        // intent.putExtra(
-        // com.snda.sdw.woa.recommend.util.Constants.INTENT_KEY_APPID,
-        // "800000832");
-        // startActivity(intent);
-
         boolean result = RecommendAPI.init(thisActivity,
                 "800000832", "dudu");
 //        if (!TextUtils.isEmpty(User.getCurrentSdid())) {
 //            RecommendAPI.setSdid(User.getCurrentSdid());
-//        }
-
-        //boolean result = RecommendAPI.init(thisActivity, "800000832", getChannel(thisActivity), appVersionName, appVersionName);       
-        //RecommendAPI.init(context, strAppId, strSdid, strPhoneNum, strChannelId);
-        //boolean result = RecommendAPI.init(thisActivity, "800000832", User.getCurrentSdid(), "", getChannel(thisActivity));       
+//        }    
         RecommendAPI.setFromPos(thisActivity, RecommendAPI.MAIN_TOP);
         
         if (result) {
             RecommendAPI.openRecommendActivity(thisActivity);  
-//            CloudaryApplication.setAlreadClickAppRecommend(true);
         }              
     }
 
