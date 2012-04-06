@@ -12,6 +12,8 @@
     <string name="passenger">乘客</string>
 	<string name="add_passenger">添加乘客</string>
 	<string name="about">关于</string>
+	<string name="close">关闭</string>
 
     <string name="key_app_mode">AppMode</string>
+    <string name="statement">作者：胡海雷\n单位：盛大文学\n工号：018578\n电话：15214351226</string>
 </resources>

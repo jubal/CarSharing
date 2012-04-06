@@ -18,6 +18,7 @@
 		android:id="@+id/selection"
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
+		android:text="@string/driver"
 	/>
 	<ListView
 		android:id="@android:id/list"

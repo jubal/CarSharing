@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
+import android.view.Menu;
 import android.widget.LinearLayout;
 
 import com.google.ads.AdRequest;

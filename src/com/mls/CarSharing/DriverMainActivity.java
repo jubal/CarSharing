@@ -7,8 +7,7 @@ import android.view.MenuItem;
 
 public class DriverMainActivity extends BaseActivity {
 	
-	private final int MENU_ADD = 91;
-	private final int MENU_ABOUT = MENU_ADD + 1;
+	private final int MENU_ADD = MENU_ABOUT + 1;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -27,21 +26,23 @@ public class DriverMainActivity extends BaseActivity {
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu){
-		showToast("Menu button pressed");
 		menu.add(0, MENU_ADD, 0, R.string.add_passenger);
-		menu.add(0, MENU_ABOUT, 0, R.string.about);
 		return super.onCreateOptionsMenu(menu);
 	}
 	
 	@Override
+	public boolean onPrepareOptionsMenu(Menu menu){
+		log("Menu button pressed");
+		return super.onPrepareOptionsMenu(menu);
+	}
+	
+	@Override
 	public boolean onOptionsItemSelected(MenuItem item){
+		log("Options item selected " + item.getItemId());
 		if (item.getItemId() == MENU_ADD) {
 			
 		}
-		else if(item.getItemId() == MENU_ABOUT) {
-			
-		}
-		return true;
+		return super.onOptionsItemSelected(item);
 	}
 
 }

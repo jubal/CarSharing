@@ -2,6 +2,7 @@ package com.mls.CarSharing;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -9,6 +10,8 @@ import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
@@ -20,11 +23,16 @@ public class BaseActivity extends Activity implements OnClickListener {
 	private String mTagString;
 	private Context mApplicationContext;
 	
-	protected static final int MODE_DRIVER = 91;
+	//
+	// option menu tag
+	protected static final int MENU_ABOUT = 91;
+	
+	protected static final int MODE_DRIVER = 624;
 	protected static final int MODE_PASSENGER = MODE_DRIVER + 1;
 	
-	protected static final int DIALOG_MODE_SELECTION = 929;
+	protected static final int DIALOG_MODE_SELECTION = 825;
 	protected static final int DIALOG_EXIT_CONFIRM = DIALOG_MODE_SELECTION + 1;
+	protected static final int DIALOG_ABOUT = DIALOG_EXIT_CONFIRM + 1;
 	
 	public final static int REQUEST_CODE = 1;
 	public final static int RESULT_CODE = REQUEST_CODE + 1;
@@ -71,6 +79,25 @@ public class BaseActivity extends Activity implements OnClickListener {
 	}
 	
 	@Override
+	public boolean onCreateOptionsMenu(Menu menu){
+		menu.add(0, MENU_ABOUT, 0, R.string.about);
+		return super.onCreateOptionsMenu(menu);
+	}
+	
+	@Override
+	public boolean onPrepareOptionsMenu(Menu menu){
+		return super.onPrepareOptionsMenu(menu);
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item){
+		if(item.getItemId() == MENU_ABOUT) {
+			showAbout();
+		}
+		return super.onOptionsItemSelected(item);
+	}
+	
+	@Override
 	protected Dialog onCreateDialog(int id){
 		switch (id) {
 		case DIALOG_MODE_SELECTION:{
@@ -95,6 +122,20 @@ public class BaseActivity extends Activity implements OnClickListener {
 			});
 			return builder.create();
 		}
+		case DIALOG_ABOUT:{
+			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+			builder.setTitle(R.string.app_name);
+			builder.setMessage(R.string.statement);
+			builder.setPositiveButton(R.string.close, new DialogInterface.OnClickListener() {
+				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					// TODO Auto-generated method stub
+					dismissDialog(DIALOG_ABOUT);
+				}
+			});
+			return builder.create();
+		}
 		default:
 			break;
 		}
@@ -115,7 +156,10 @@ public class BaseActivity extends Activity implements OnClickListener {
 			log("Back button pressed");
 			backButtonPressed();
 		}
-		return true;
+		
+		//
+		// shoud return false to let it continue to transfer
+		return false;
 	}
 	
 	public void backButtonPressed(){
@@ -145,6 +189,10 @@ public class BaseActivity extends Activity implements OnClickListener {
 	 */
 	public void showToast(String content, int duration){
 		Toast.makeText(getApplicationContext(), content, duration).show();
+	}
+	
+	public void showAbout() {
+		showDialog(DIALOG_ABOUT);
 	}
 	
 	/*
