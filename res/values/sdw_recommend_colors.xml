@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="rc_black">#000000</color>
+    <color name="rc_white">#FFFFFFFF</color>
+    <color name="rc_red">#FFFF0000</color>
+    <color name="rc_detailblackground">#EDFBFE</color>
+    <color name="rc_detailtitle">#353535</color>
+    <color name="rc_detailcontent">#545454</color>
+    <color name="rc_gray">#FF999999</color>
+    <color name="rc_itemblackground1">#FFFFFFFF</color>
+    <color name="rc_itemblackground2">#FFF3F3F3</color>
+    <color name="rc_littlegray">#F0F0F0</color>
+
+</resources>

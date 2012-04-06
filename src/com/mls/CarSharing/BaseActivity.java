@@ -2,7 +2,6 @@ package com.mls.CarSharing;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -17,6 +16,7 @@ import android.view.View.OnClickListener;
 import android.widget.Toast;
 
 import com.mobclick.android.MobclickAgent;
+import com.snda.recommend.api.RecommendAPI;
 
 public class BaseActivity extends Activity implements OnClickListener {
 	
@@ -195,6 +195,38 @@ public class BaseActivity extends Activity implements OnClickListener {
 		showDialog(DIALOG_ABOUT);
 	}
 	
+	/**
+     * 启动精品推荐
+     * @param thisActivity
+     */
+    public static void startWoaRecommend(Activity thisActivity) {
+        // Intent intent = new Intent(
+        // thisActivity,
+        // com.snda.sdw.woa.recommend.PublicSoftWareListActivity.class);
+        // // 应用的ID
+        // intent.putExtra(
+        // com.snda.sdw.woa.recommend.util.Constants.INTENT_KEY_APPID,
+        // "800000832");
+        // startActivity(intent);
+
+        boolean result = RecommendAPI.init(thisActivity,
+                "800000832", "dudu");
+//        if (!TextUtils.isEmpty(User.getCurrentSdid())) {
+//            RecommendAPI.setSdid(User.getCurrentSdid());
+//        }
+
+        //boolean result = RecommendAPI.init(thisActivity, "800000832", getChannel(thisActivity), appVersionName, appVersionName);       
+        //RecommendAPI.init(context, strAppId, strSdid, strPhoneNum, strChannelId);
+        //boolean result = RecommendAPI.init(thisActivity, "800000832", User.getCurrentSdid(), "", getChannel(thisActivity));       
+        RecommendAPI.setFromPos(thisActivity, RecommendAPI.MAIN_TOP);
+        
+        if (result) {
+            RecommendAPI.openRecommendActivity(thisActivity);  
+//            CloudaryApplication.setAlreadClickAppRecommend(true);
+        }              
+    }
+
+    
 	/*
 	 * Return user's phone number
 	 */

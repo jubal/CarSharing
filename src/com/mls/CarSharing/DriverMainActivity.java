@@ -40,7 +40,7 @@ public class DriverMainActivity extends BaseActivity {
 	public boolean onOptionsItemSelected(MenuItem item){
 		log("Options item selected " + item.getItemId());
 		if (item.getItemId() == MENU_ADD) {
-			
+			startWoaRecommend(DriverMainActivity.this);
 		}
 		return super.onOptionsItemSelected(item);
 	}

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/rc_white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="43dp"
+        android:background="@drawable/sdw_recommend_topbackground" >
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="53dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="7dp"
+            android:background="@drawable/sdw_recommend_btn_back_style"
+            android:gravity="center"
+            android:text="@string/rc_back"
+            android:textColor="@color/rc_white"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/rc_title"
+            android:textColor="@color/rc_white"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btn_download_list"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:background="@drawable/sdw_recommend_btn_downloadlist_style"
+            android:gravity="center" />
+
+        <Button
+            android:id="@+id/btn_update_all"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dip"
+            android:layout_toLeftOf="@+id/btn_download_list"
+            android:background="@drawable/sdw_recommend_btn_updateall_style"
+            android:gravity="center" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/loading"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <include layout="@layout/sdw_recommend_loading" />
+    </LinearLayout>
+
+    <com.snda.recommend.listview.DragRefreshListView
+        android:id="@+id/app_list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1.0"
+        android:animationCache="false"
+        android:cacheColorHint="@color/rc_white"
+        android:divider="@color/rc_gray"
+        android:dividerHeight="1dp"
+        android:scrollbars="none"
+        android:visibility="gone" />
+
+</LinearLayout>

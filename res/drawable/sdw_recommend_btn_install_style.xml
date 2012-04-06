@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- <item android:state_pressed="false" android:drawable="@drawable/back_normal" /> -->
+    <item android:drawable="@drawable/sdw_recommend_btn_background_red_select" android:state_pressed="true"/>
+    <item android:drawable="@drawable/sdw_recommend_btn_background_red_select" android:state_focused="true"/>
+    <item android:drawable="@drawable/sdw_recommend_btn_background_red_normal"/>
+
+</selector>
